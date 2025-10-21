@@ -1,0 +1,58 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background:#f0f2f5; color:#333; }
+
+/* HEADER */
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 50px; background:#34495e; color:white;
+}
+header .logo { display:flex; align-items:center; padding: 15px;}
+header .logo img { width:50px; margin-right:10px;}
+header nav ul { display:flex; list-style:none; }
+header nav ul li { margin-left:45px; }
+header nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+header nav ul li a:hover { color:#1abc9c; }
+
+
+
+
+/* SERVICES */
+.services { padding:60px 20px; text-align:center; }
+.services h2 { color:#1abc9c; margin-bottom:40px; }
+.service-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+.card { background:white; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.3s; }
+.card:hover { transform:scale(1.05); }
+.card img { width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:15px; }
+.card h3 { margin-bottom:10px; color:#2c3e50; }
+.card p { color:#555; }
+
+/* CONTACT FORM */
+.contact { padding:60px 20px; text-align:center; }
+.contact h2 { color:#1abc9c; margin-bottom:30px; }
+form {
+  display:flex; flex-direction:column;
+  max-width:400px; margin:0 auto; gap:15px;
+}
+form input, form textarea {
+  padding:12px; border-radius:8px; border:1px solid #ccc; font-size:16px;
+}
+form button {
+  padding:12px; border:none; border-radius:8px;
+  background:#1abc9c; color:white; font-weight:bold; cursor:pointer;
+}
+form button:hover { background:#16a085; }
+
+/* CHAT */
+.chat-box { position:fixed; bottom:20px; right:20px; width:300px; background:white;
+  border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2); display:flex; flex-direction:column;
+}
+.chat-header { background:#1abc9c; color:white; padding:10px; text-align:center; font-weight:bold; border-top-left-radius:12px; border-top-right-radius:12px; }
+.chat-body { height:200px; overflow-y:auto; padding:10px; background:#ecf0f1; }
+.user-message { text-align:right; background:#16a085; color:white; padding:6px 10px; margin:5px 0; border-radius:12px; }
+.bot-message { text-align:left; background:#bdc3c7; color:black; padding:6px 10px; margin:5px 0; border-radius:12px; }
+#chatInput { border:none; padding:10px; width:calc(100% - 20px); outline:none; }
+#sendBtn { border:none; background:#1abc9c; color:white; padding:10px; cursor:pointer; }
+#sendBtn:hover { background:#16a085; }
+
+/* FOOTER */
+footer { background:#34495e; color:white; text-align:center; padding:20px; margin-top:30px; }

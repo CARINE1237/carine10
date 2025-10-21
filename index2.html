@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Imaginaire</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+  <!-- En-tête avec logo et menu -->
+  <header>
+    <div class="logo">
+      <img src="img1.jpg" alt="Logo Startup">
+      <h1>StartUpX</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#presentation">Présentation</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section principale -->
+  <section id="presentation" class="presentation">
+    <h2>Bienvenue chez StartUpX</h2>
+    <p>
+      StartUpX est une startup innovante spécialisée dans la création de solutions numériques pour améliorer votre quotidien.
+      Nous combinons créativité et technologie pour offrir des services uniques à nos clients.
+    </p>
+  </section>
+
+  <!-- Section services -->
+  <section id="services" class="services">
+    <h2>Nos Offres</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Application Mobile</h3>
+        <p>Développement d’applications mobiles personnalisées et performantes.</p>
+        <img src="img3.jpg" alt="Offre 1">
+      </div>
+      <div class="service-item">
+        <h3>Site Web</h3>
+        <p>Création de sites web modernes, responsives et adaptés à vos besoins.</p>
+        <img src="img2.jpg" alt="Offre 2">
+        
+        
+      </div>
+      <div class="service-item">
+        
+        <h3>Marketing Digital</h3>
+        <p>Stratégies de marketing digital pour booster votre visibilité en ligne.</p>
+        <img src="img1.jpg" alt="Offre 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section contact -->
+  <section id="contact" class="contact">
+    <h2>Contactez-nous</h2>
+    <form id="contactForm">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Chat graphique -->
+  <div class="chat-box">
+    <div class="chat-header">Chat avec StartUpX</div>
+    <div class="chat-body" id="chatBody">
+      <div class="bot-message">Bonjour ! Je suis StartBot 🤖, comment puis-je vous aider ?</div>
+    </div>
+    <input type="text" id="chatInput" placeholder="Écrivez un message...">
+    <button id="sendBtn">Envoyer</button>
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2025 StartUpX. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Script pour formulaire et chat -->
+  <script>
+    // Formulaire
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Merci pour votre message ! Nous vous répondrons bientôt.');
+      this.reset();
+    });
+
+    // Chat simple
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    sendBtn.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if(message){
+        const userMsg = document.createElement('div');
+        userMsg.classList.add('user-message');
+        userMsg.textContent = message;
+        chatBody.appendChild(userMsg);
+        chatInput.value = '';
+
+        // Réponse automatique simple
+        setTimeout(() => {
+          const botMsg = document.createElement('div');
+          botMsg.classList.add('bot-message');
+          botMsg.textContent = "Merci pour votre message, nous reviendrons vers vous rapidement !";
+          chatBody.appendChild(botMsg);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 1000);
+      }
+    });
+  </script>
+
+</body>
+</html>
